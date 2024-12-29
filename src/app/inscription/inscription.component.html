@@ -1,0 +1,51 @@
+<div class="container-backdrop" (click)="close()"></div>
+
+<div class="container" >
+  <div class="container-group">
+    <img class="container-img" src="../assets/images/logoPinterest.png" alt="Logo de pinterest">
+    <h1 class="container-group-title">Unlimited free access to the world's best ideas</h1>
+    <p>Sign up to see more</p>
+  </div>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+      <input class="form-component-input" type="email" id="email" formControlName="email" placeholder="Email">
+      <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        <span>Email est requis et doit être valide.</span>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input class="form-component-input" type="password" id="password" formControlName="password" placeholder="Create a password">
+      <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        <span>Mot de passe est requis et doit contenir au moins 6 caractères.</span>
+      </div>
+    </div>
+
+    <div>
+      <label for="birthdate">Birthdate</label>
+      <input class="form-component-input" type="date" id="birthdate" formControlName="birthdate">
+      <div *ngIf="signupForm.get('birthdate')?.invalid && signupForm.get('birthdate')?.touched">
+        <span>Date de naissance est requise.</span>
+      </div>
+    </div>
+
+    <button class="btn btn-tertiary" type="submit">Continue</button>
+    <p class="or"><strong>OR</strong></p>
+    <button class="btn btn-google">
+      <img src="../assets/images/logoGoogle.svg" alt="Logo de Google">
+      Continuer avec Google
+    </button>
+
+  <div class="container-paragraph">
+    <p>By continuing, you agree to Pinterest's</p>
+    <p><span class="container-paragraph-important">Terms of Service</span> and acknowledge you've read</p>
+    <p>our <span class="container-paragraph-important"> Privacy Policy. Notice at collection.</span></p>
+    <p>Already a member? <span class="container-paragraph-important">Log in</span></p>
+  </div>
+
+  </form>
+</div>
+

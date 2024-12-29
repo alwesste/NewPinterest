@@ -1,0 +1,77 @@
+form {
+  margin: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 10px;
+}
+form div > span {
+  color: red;
+}
+form label {
+  margin-left: 5px;
+}
+form input {
+  height: 50px;
+  border-radius: 20px;
+}
+
+.container-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.container {
+  position: fixed;
+  margin: auto;
+  width: 550px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1000;
+  padding: 50px 30px 50px 30px;
+  border-radius: 40px;
+}
+.container-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container-group-title {
+  margin-top: 30px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 40px;
+}
+.container-img {
+  height: 40px;
+  width: 40px;
+}
+.container-paragraph {
+  text-align: center;
+}
+.container-paragraph-important {
+  font-weight: 500;
+}
+.container-paragraph p {
+  line-height: 10px;
+  font-size: 13px;
+}
+
+.or {
+  margin: 0;
+}
+
+/*# sourceMappingURL=inscription.component.css.map */

@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+
+  &-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    & li {
+      font-weight: 500;
+      cursor: pointer;
+      padding: 20px 20px 20px 20px;
+      margin: 10px;
+
+      &.active {
+        background-color: black;
+        color: white;
+        border-radius: 30px;
+
+      }
+    }
+  }
+
+  &-search {
+    position: absolute;
+    left: 280px;
+    color: white;
+  }
+
+  &-input {
+    width: 95%;
+    height: 4rem;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    background-color: #f3f3f3;
+    padding-left: 20px;
+    text-indent: 40px;
+    transition: border-color 0.1s ease;
+
+    &:hover {
+      background-color: lightgray;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #95C1FF;;
+    }
+  }
+}
+
+img {
+  height: 30px;
+  margin: 20px;
+  cursor: pointer;
+}
+

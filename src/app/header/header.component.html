@@ -1,0 +1,37 @@
+<nav class="nav">
+  <a [routerLink]="'accueil'">
+    <img
+      src="../../assets/images/logoPinterest.png"
+      alt="logo de pinterest"
+    >
+  </a>
+  <ul class="nav-list">
+    <li
+      *ngFor="let item of navItems; let i = index"
+      [ngClass]="{ active: selectedIndex === i }"
+      (click)="onSelect(i)"
+      [routerLink]="'/' + (
+      item === 'Accueil' ? 'accueil' :
+      item === 'Creer' ? 'creation':
+      item.toLowerCase()
+      )"
+      routerLinkActive="active"
+    >
+      {{ item }}
+    </li>
+
+    <app-inscription *ngIf="isModalOpen" (onClose)="closeModal()"></app-inscription>
+
+  </ul>
+  <img class="nav-search" src="../../assets/images/loupe.png" alt="Icône de loupe">
+  <input
+    class="nav-input"
+    type="text"
+    name="search"
+    id="search"
+    placeholder="Rechercher"
+  >
+  <img src="../../assets/images/cloche.png" alt="la cloche">
+  <img src="../../assets/images/bulle-discours.avif" alt="Bulle de dialogue">
+  <img src="../../assets/images/email.png" alt="email" (click)="openModalInscription()">
+</nav>

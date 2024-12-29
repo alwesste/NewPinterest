@@ -1,0 +1,46 @@
+.card-container {
+  columns: 250px;
+  column-gap: 10px;
+  margin: 0 120px 0 120px;
+}
+
+.card-image {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 500px;
+  margin-bottom: -40px;
+  z-index: 0;
+  cursor: pointer;
+}
+.card-image:hover {
+  filter: brightness(0.5);
+}
+.card-button {
+  position: relative;
+  top: 70px;
+  left: 160px;
+  opacity: 0;
+  transition: opacity;
+  z-index: 1;
+  background: red;
+  border: none;
+  color: white;
+  padding: 15px 20px 15px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.card-button:hover {
+  filter: brightness(0.8);
+}
+
+.card-button.visible {
+  opacity: 1;
+}
+
+.card-image.visible {
+  filter: brightness(0.5);
+}
+
+/*# sourceMappingURL=card.component.css.map */

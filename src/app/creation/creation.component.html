@@ -1,0 +1,68 @@
+<mat-divider></mat-divider>
+
+<div class="container">
+
+  <form class="container-img" (ngSubmit)="onSubmit()">
+    <label *ngIf="!isFileUploaded" for="file-upload" class="custom-file-upload">
+      Choisissez un fichier ou glissez-le
+    </label>
+    <input class="form-component-input"  type="file" id="file-upload" name="file-upload" (change)="onFileSelected($event)">
+    <div  *ngIf="imageUrl">
+      <img class="custom-file-img" [src]="imageUrl" alt="Aperçu de l'image" />
+    </div>
+    <mat-divider></mat-divider>
+    <button type="submit">Enregistrer depuis l'url</button>
+  </form>
+
+  <form class="form">
+    <div class="form-component">
+      <label for="title">Title</label>
+      <input class="form-component-input" type="text" id="title" name="title" placeholder="Ajouter un titre">
+    </div>
+
+    <div class="form-component">
+      <label for="description">Description</label>
+      <textarea class="form-component-input" name="description" id="description" cols="30" rows="5" placeholder="Ajouter une description"></textarea>
+    </div>
+
+    <div class="form-component">
+      <label for="link">Link</label>
+      <input class="form-component-input" type="text" id="link" name="link" placeholder="Ajouter un lien">
+    </div>
+
+    <div class="form-component">
+      <label for="tableau">Tableau</label>
+      <input class="form-component-input" type="text" id="tableau" name="tableau" placeholder="Choisir un tableau">
+    </div>
+
+    <div class="form-component">
+      <label for="theme">Themes etiquetes</label>
+      <input class="form-component-input" type="text" id="theme" name="theme" placeholder="Chercher une etiquette">
+    </div>
+
+
+    <div class="form-info">
+      <div class="form-info-label">
+
+        <span class="form-info-label-title">Plus d'options</span>
+        <img
+          class="img-arrow"
+          src="../../assets/images/arrow-down-sign-to-navigate.png"
+          alt="arrow"
+          [ngClass]="{ 'checked': isRotated }"
+          (click)="toggleInfoForm($event)"
+        >
+      </div>
+
+      <div *ngIf="showSliders">
+        <div class="form-info-slider" *ngFor="let slider of sliders; let i = index">
+          <div class="slider" [class.active]="slider.isActive" (click)="toggleSlider(i)"></div>
+          <p>{{ slider.text }}</p>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+

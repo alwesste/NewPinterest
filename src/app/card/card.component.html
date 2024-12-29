@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div class="card" *ngFor="let url of catUrls$ | async, let i = index"
+       (mouseover)="showButton[i] = true"
+       (mouseleave)="showButton[i] = false"
+  >
+    <button class="card-button" [ngClass]="{ 'visible': showButton[i] }">
+      Register
+    </button>
+    <img class="card-image" [src]="url" alt="Cat Image" [ngClass]="{ 'visible': showButton[i] }">
+  </div>
+</div>
+
